@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Music Bar</title>
+	<style>
+/*
+1. nav영역 수정 - 검색바, 로그인 회원가입 부분 수정
+
+2. 화면 정렬 맞추기
+
+3.최신음악, 차트 -> padding,margin, 글씨정렬, 글씨체 등등
+4.인기급상승 부분 글씨랑 이미지 정렬맞추기
+5. 화면 배경색 바꾸기
+6.<a> css
+*/
+
+        @font-face {
+            font-family: 'Giants-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Giants-Bold.woff2') format('woff2');
+            font-weight: 400;      
+            font-style: normal;
+        }
+        body {
+            font-family:'Giants-Bold';
+            background-color:rgba(253, 251, 252, 0.829);
+            color:black;
+            text-align: center;
+        }
+        /*nav영역 꾸미기 - 글자크기, 글자색*/
+        .img1 {
+            width: 200px; height:200px;
+            padding:10px; 
+            padding-bottom: 0;
+            margin:auto;
+            padding:auto;
+        
+        }
+        .img2 {
+            width: 250px; height: 250px;
+            padding:10px; 
+            padding-bottom: 0;
+            margin:auto;
+        }
+        .img3{
+            width: 70px; height: 70px;
+            padding: 10px;
+            float:left;
+        }
+        .display{display: inline-block;
+                 margin: auto;
+        }
+
+        .white{ color: white;}
+        .size1 {
+            font-size:30px;
+        }
+        input {
+            width: 500px;
+            height: 25px;
+            margin: 10px;
+            padding:5px;
+            font-size: 20px;
+            color:rgb(0, 0, 0);
+        }
+        table {
+            width: 1000px;
+            height: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .text1 {
+            float: right;
+        }
+        .text2 {
+            float: left;
+        }
+        a,a:focus, a:active {
+            text-decoration: none;
+            color: inherit;
+       }
+       a:hover{
+        color:aquamarine;
+       }
+	</style>
+</head>
+
+<body>
+    <nav>
+        <span class="text2 size1"><a href="#"> Music Bar</a></span>
+        <span><input type="text",name="search" value="노래, 앨범, 아티스트 등을 검색해보세요!"></span>
+        <span class="text1"><a href="#">Log in</a></span>
+        <span class="text1"><a href="#">Sign in</a></span>
+
+    </nav>
+   <!-- 
+    <aside>
+        <p>home</p>
+        <p>browsing</p>
+        <p>saved</p>
+    </aside>
+   --> 
+<br><br><br>
+    <h1>최신음악</h1>
+    <!-- div disply: inline - block, 패딩.. -->
+    <div class="display"><a href="https://music.youtube.com/playlist?list=OLAK5uy_kCQMuwnypvE7ECMJZ-uPvRm5UCFwcaGok">
+    <img class="img1" src="C:\Users\82103\Desktop\seven.jpg"/>
+    <p>Seven (Weekend Ver)</p></a>
+    정국 (Jung Kook)</div> 
+
+    <div class="display"><a href="https://music.youtube.com/playlist?list=OLAK5uy_lLXcmlXKis8WKClqvQEJnL7O_jUxUXr3s">
+        <img class="img1" src="C:\Users\82103\Desktop\GetUp.jpg"/>
+        <p>NewJeans 2nd EP 'Get Up'</p></a>
+        New Jeans</div>     
+
+    <div class="display"><a href="https://music.youtube.com/playlist?list=OLAK5uy_kqwaJ-oX115Cr0wgOpAcQj2RGcNCkk02w">
+            <img class="img1" src="C:\Users\82103\Desktop\save.jpg"/>
+            <p>저금통</p></a>
+            E sense</div>  
+
+    <div class="display"><a href="https://music.youtube.com/playlist?list=OLAK5uy_lL5NvubssVKKRXjjUvRjaCSSsAvpzPLGk">
+            <img class="img1" src="C:\Users\82103\Desktop\K-pop.jpg"/>
+            <p>K-POP</p></a>
+            Travis Scott, Bad Bunny, The Weekend</div>
+
+            <br>
+            <br>
+            <br>
+            <br>            
+            
+        <h1> 차트 </h1>
+        <div class="display"><a href="https://music.youtube.com/playlist?list=PL4fGSI1pDJn6jXS_Tv_N9B8Z0HTRVJE0m">
+            <img class="img2"src="https://yt3.ggpht.com/qjgfMefk4T-3URk8sEGQFt4OreZ3h8udoj75Nh0J-AaGKNjsX_lMu9W27q3O1KDeKmjGjfSIhUZv=s576"/>
+            <p>한국 인기곡 Top100</p></a>
+            </div>     
+
+            <div class="display"><a href="https://music.youtube.com/playlist?list=PL4fGSI1pDJn5S09aId3dUGp40ygUqmPGc">
+                <img class="img2" src="https://yt3.ggpht.com/uuHDRwH6m8kWT95-qE748RbuO_5vA4MStIX2btiQSTNUeoWcec2w91-Qsj1XOlhOUoc9X3bm73Q=s576"/>
+                <p>한국 인기 뮤직비디오</p></a></div>  
+
+            <div class="display"><a href="https://music.youtube.com/playlist?list=PLmtapKaZsgZsjfcjrumAR4KVu5LDDeugN">
+                <img class="img2" src="https://yt3.ggpht.com/hbU-o6D0b11kULTcxYAbyF7Bqoegc0CizYAsvgvpMjo9KY7fYYp527RYoK4plDM7Gyor1csPmC8w=s576"/>
+                <p>한국 인기 급상승 동영상20</p></a> </div>
+<br>
+<br>
+<br>
+<br>
+            
+            <h1> 인기 급상승 곡</h1>
+            <table>
+            <tbody>
+                <tr>
+                    <td><a href="#">
+                        <img class="img3" src="https://lh3.googleusercontent.com/6HM8d1d7o2RDgf17Qi-T_XWgOAE8eOxYRWTVmAMxjdKjQ0vzq5rn4zQt1QkGW4fCNEGJifJ50Kboozkj=w544-h544-l90-rj"/>
+                        Sevne-Explicit Ver.- 정국(Jung Kook)</td>
+                    <td><a href="#">
+                        <img class="img3" src="https://lh3.googleusercontent.com/psYxq6YxRXvX-BMjcob-diepJv3Yda0hDUsdm5T0kFQntTBDPumMhcg7GKUzp4Ii8XWzSKW43DHc82A=w544-h544-l90-rj"/>
+                        Rush-Troye Sivan</a></td> 
+                    <td><a href="#">
+                        <img class="img3" src="https://lh3.googleusercontent.com/SZa9zDdMLp8GSM3fgLKsNY_-caArovw8sGge26VKLyXNMtXOD7EBXW3adg1_Plpcrh7RZKe4NORghksD=w544-h544-l90-rj"/>
+                        Overdirve - Post Malone</td>        
+                </tr>
+                <tr>
+                    <td><a href="#">
+                        <img class="img3" src="https://lh3.googleusercontent.com/FzLKj6zFEJna0gRNDeZRH4nuQwEyN-YbCaC-bIGLoia6EhirHUachdvdEdR3VdB7pArgFCW8mtpLPL0=w544-h544-l90-rj"/>
+                        ETA - New Jeans</td>
+                    <td><a href="#">
+                        <img class="img3" src="https://lh3.googleusercontent.com/T7upcOgF62b7pvopjAG8NuuSkfOXOLWFYilXkyPIa2UNbKWJB604KlhA4-XyHe6PkOgAgxaOkOu0ZvkW=w544-h544-l90-rj"/>
+                        Back To ME - The Rose</a></td> 
+                    <td><a href="#">
+                        <img  class="img3"src="https://lh3.googleusercontent.com/SZa9zDdMLp8GSM3fgLKsNY_-caArovw8sGge26VKLyXNMtXOD7EBXW3adg1_Plpcrh7RZKe4NORghksD=w544-h544-l90-rj"/>
+                        Do no touch - MISAMO</td>        
+                </tr>
+                <tr>
+                    <td><a href="#">
+                        <img class="img3" src="https://lh3.googleusercontent.com/6HM8d1d7o2RDgf17Qi-T_XWgOAE8eOxYRWTVmAMxjdKjQ0vzq5rn4zQt1QkGW4fCNEGJifJ50Kboozkj=w544-h544-l90-rj"/>
+                        22 - 죠지</td>
+                    <td><a href="#">
+                        <img class="img3" src="https://lh3.googleusercontent.com/psYxq6YxRXvX-BMjcob-diepJv3Yda0hDUsdm5T0kFQntTBDPumMhcg7GKUzp4Ii8XWzSKW43DHc82A=w544-h544-l90-rj"/>
+                        Bubbles&Mushrooms - 백예린</a></td> 
+                    <td><a href="#">
+                        <img class="img3" src="https://lh3.googleusercontent.com/SZa9zDdMLp8GSM3fgLKsNY_-caArovw8sGge26VKLyXNMtXOD7EBXW3adg1_Plpcrh7RZKe4NORghksD=w544-h544-l90-rj"/>
+                        ISJT - NCT DREAM</td>        
+                </tr>
+            </tbody>
+        </table>
+</body>
+<footer>
+
+</footer>
+</html>
