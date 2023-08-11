@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Clock</title>
+  <style>
+    @font-face {
+        font-family: 'Giants-Bold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Giants-Bold.woff2') format('woff2');
+        font-weight: 400;      
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'Cafe24Supermagic-Bold-v1.0';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/Cafe24Supermagic-Bold-v1.0.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+    }
+    /* *{ 
+      font-family: 'Giants-Bold';
+      box-sizing: border-box;
+      font-size: 32px;
+    } */
+
+     /*
+        box-sizing 의 두가지 속성
+        1. content-box: 안쪽 여백이나 테두리가 커지면 요소도 같이 커진다.
+        2. border-box: 안쪽 여백이나 테두리가 커져도 요소의 width height는 유지된다
+    */
+      
+
+    body{
+      margin: 0;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .clock{
+      min-width: 360px;
+      margin: 0 auto;
+      padding: 50px 0;
+      text-align: center;
+    /*  border: 1px solid rgb(255, 255, 255); */
+      border-radius: 10px;
+    }
+
+    .today{
+        font-family: 'Giants-Bold';
+        box-sizing: border-box;
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    .time{
+        font-family: 'Giants-Bold';
+        box-sizing: border-box;
+        font-size: 25px;
+      margin-top: 10px;
+    }
+    div>p {
+        font-family: 'Cafe24Supermagic-Bold-v1.0';
+        font-size: 20px;
+    }
+    
+
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <P>현재시각은</P>
+    <div id="today" class="today"></div>
+    <div id="time" class="time"></div>
+    <P>입니다.</P>
+    <P>2024년까지 남은 시간은</P>
+    <div id ="next_day" class = "next_day"></div>
+    <div id ="next_time" class = "next_time"></div>
+    <p>입니다.</p>
+</div>
+  <script>
+    // 요소 선택
+    const todayDiv = document.getElementById('today');
+    const timeDiv = document.getElementById('time');
+    const nextdayDiv = document.getElementById('next_day');
+    const nexttimeDiv = document.getElementById('next_time');
+
+
+    // getTime 함수
+    function getTime(){
+      let now = new Date(); //년,월,일,시,분,초 제공
+      let year = now.getFullYear();
+      let month = now.getMonth() + 1; //getMonth는 +1을 해야 해당 월 반환
+      let date = now.getDate();
+      let hour = now.getHours();
+      let minute = now.getMinutes();
+      let second = now.getSeconds();
+      //2024년까지 남은 시간계산해주기
+      let next_month = 12-month;
+      let next_hour = 24-hour;
+      let next_minute = 60-minute;
+      let next_second = 60-second;
+      let next_date;
+
+      
+      month = month < 10 ? `0${month}` : month;// 10보다 작은 수면 0을앞에 붙힌다
+      date = date < 10 ? `0${date}` : date;
+      hour = hour < 10 ? `0${hour}` : hour;
+      minute = minute < 10 ? `0${minute}` : minute;
+      second = second < 10 ? `0${second}` : second;
+      //내년까지 남은시간 
+      next_month = next_month <10 ? '0${next_month}': next_month;
+      next_date = next_date <10 ? '0${next_date}': next_date;
+      next_hour = next_hour <10 ? '0${next_hour}': next_hour;
+      next_minute = next_minute <10 ? '0${next_minute}': next_minute;
+      next_second = next_second <10 ? '0${next_second}': next_second;
+      
+
+
+      todayDiv.textContent = `${year}년 ${month}월 ${date}일`
+      timeDiv.textContent = `${hour}:${minute}:${second}`
+      nextdayDiv.textContent = '${year}년 ${month}월 ${date}일'
+      nexttimeDiv.textContent = '${hour}시간 ${minute}분 ${second}초'
+
+    
+    }
+
+    // setInterval 메소드
+    getTime()
+    setInterval(getTime, 1000);//1초마다 새로고침
+  </script>
+</body>
+</html>
