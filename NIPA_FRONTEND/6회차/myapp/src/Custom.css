@@ -1,0 +1,14 @@
+nav{
+  background-color: #91C8E4;
+  height: 80px;
+  text-align: center;
+  padding-top: 40px;
+}
+.nav-link{
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 24px; color: white;
+}
+.nav-link.active{
+  color: white !important;
+}
